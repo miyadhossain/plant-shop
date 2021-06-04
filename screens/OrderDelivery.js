@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-const OrderDelivery = ({}) => {
+const OrderDelivery = ({ }) => {
   return (
     <View style={{ flex: 1 }}>
       <Text
@@ -14,7 +14,7 @@ const OrderDelivery = ({}) => {
           color: "#2BC48A",
         }}
       >
-        Orders Successfully confirmed!
+        Oder successfully confirmed!
       </Text>
     </View>
   );
