@@ -1,19 +1,18 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React from 'react';
+import {Text, View} from 'react-native';
 
-const OrderDelivery = ({ }) => {
+const OrderDelivery = ({}) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <Text
         style={{
           flex: 1,
-          textAlign: "center",
-          alignItems: "center",
-          textAlignVertical: "center",
+          textAlign: 'center',
+          alignItems: 'center',
+          textAlignVertical: 'center',
           fontSize: 30,
-          color: "#2BC48A",
-        }}
-      >
+          color: '#2BC48A',
+        }}>
         Oder successfully confirmed!
       </Text>
     </View>

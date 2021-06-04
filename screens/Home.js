@@ -267,7 +267,7 @@ const Home = ({navigation}) => {
     return (
       <View style={{padding: SIZES.padding * 2}}>
         <Text style={{...FONTS.h1, textAlign: 'center', color: '#2BC48A'}}>
-          Earth Planet
+          Plant Shop
         </Text>
         <Text style={{...FONTS.h3}}>Main</Text>
         <Text style={{...FONTS.h3}}>Categories</Text>
