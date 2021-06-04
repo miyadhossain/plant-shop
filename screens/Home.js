@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   FlatList,
   Image,
@@ -7,28 +7,28 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from "react-native";
-import { COLORS, FONTS, icons, images, SIZES } from "../constants";
+} from 'react-native';
+import {COLORS, FONTS, icons, images, SIZES} from '../constants';
 
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   const Location = {
-    title_name: "Search Location",
+    location: 'Search Location',
   };
 
   const categoryData = [
     {
       id: 1,
-      name: "Plant",
+      name: 'Plant',
       icon: icons.plant,
     },
     {
       id: 2,
-      name: "Orchid",
+      name: 'Orchid',
       icon: icons.orchid,
     },
     {
       id: 3,
-      name: "Flowers",
+      name: 'Flowers',
       icon: icons.flower,
     },
   ];
@@ -41,64 +41,64 @@ const Home = ({ navigation }) => {
   const plantData = [
     {
       id: 2,
-      name: "Orchid",
+      name: 'Orchid',
       rating: 4.8,
       categories: [2],
       priceRating: expensive,
       photo: images.orchid_1,
-      duration: "15 - 20 min",
+      duration: '15 - 20 min',
       menu: [
         {
           menuId: 4,
-          name: "Orchid",
+          name: 'Orchid',
           photo: images.orchid_2,
-          description: "Fresh Natural Orchid",
+          description: 'Fresh Natural Orchid',
           price: 15,
         },
         {
           menuId: 5,
-          name: "Natural Orchid",
+          name: 'Natural Orchid',
           photo: images.orchid_3,
-          description: "Fresh Natural Orchid",
+          description: 'Fresh Natural Orchid',
           price: 20,
         },
         {
           menuId: 6,
-          name: "Natural Orchid",
+          name: 'Natural Orchid',
           photo: images.orchid_4,
-          description: "Fresh Natural Orchid",
+          description: 'Fresh Natural Orchid',
           price: 10,
         },
       ],
     },
     {
       id: 3,
-      name: "Flowers",
+      name: 'Flowers',
       rating: 4.8,
       categories: [3],
       priceRating: expensive,
       photo: images.flower_1,
-      duration: "20 - 25 min",
+      duration: '20 - 25 min',
       menu: [
         {
           menuId: 8,
-          name: "Natural Fresh Flower",
+          name: 'Natural Fresh Flower',
           photo: images.flower_2,
-          description: "Fresh Natural Flower",
+          description: 'Fresh Natural Flower',
           price: 20,
         },
         {
           menuId: 9,
-          name: "Natural Fresh Flower",
+          name: 'Natural Fresh Flower',
           photo: images.flower_3,
-          description: "Fresh Natural Flower",
+          description: 'Fresh Natural Flower',
           price: 20,
         },
         {
           menuId: 10,
-          name: "Natural Fresh Flower",
+          name: 'Natural Fresh Flower',
           photo: images.flower_4,
-          description: "Fresh Natural Flower",
+          description: 'Fresh Natural Flower',
           price: 20,
         },
       ],
@@ -106,33 +106,33 @@ const Home = ({ navigation }) => {
 
     {
       id: 5,
-      name: "Plant",
+      name: 'Plant',
       rating: 4.8,
       categories: [1],
       priceRating: affordable,
       photo: images.plant_1,
-      duration: "15 - 20 min",
+      duration: '15 - 20 min',
 
       menu: [
         {
           menuId: 10,
-          name: "Natural Green Plant",
+          name: 'Natural Green Plant',
           photo: images.plant_2,
-          description: "Nature Green Plant",
+          description: 'Nature Green Plant',
           price: 5,
         },
         {
           menuId: 11,
-          name: "Natural Green Plant",
+          name: 'Natural Green Plant',
           photo: images.plant_3,
-          description: "Nature Green Plant",
+          description: 'Nature Green Plant',
           price: 8,
         },
         {
           menuId: 12,
-          name: "Natural Green Plant",
+          name: 'Natural Green Plant',
           photo: images.plant_3,
-          description: "Nature Green Plant",
+          description: 'Nature Green Plant',
           price: 8,
         },
       ],
@@ -146,29 +146,30 @@ const Home = ({ navigation }) => {
 
   function onSelectCategory(category) {
     //filter plant
-    let plantList = plantData.filter((a) => a.categories.includes(category.id));
+    let plantList = plantData.filter(a => a.categories.includes(category.id));
     setPlants(plantList);
     setSelectedCategory(category);
   }
 
   function getCategoryNameById(id) {
-    let category = categories.filter((a) => a.id == id);
+    let category = categories.filter(a => a.id == id);
 
-    if (category.length > 0) return category[0].name;
+    if (category.length > 0) {
+      return category[0].name;
+    }
 
-    return "";
+    return '';
   }
 
   function renderHeader() {
     return (
-      <View style={{ flexDirection: "row", height: 50 }}>
+      <View style={{flexDirection: 'row', height: 50}}>
         <TouchableOpacity
           style={{
             width: 50,
             paddingLeft: SIZES.padding * 2,
-            justifyContent: "center",
-          }}
-        >
+            justifyContent: 'center',
+          }}>
           <Image
             source={icons.nearby}
             resizeMode="contain"
@@ -179,20 +180,17 @@ const Home = ({ navigation }) => {
           />
         </TouchableOpacity>
 
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <View
             style={{
-              width: "70%",
-              height: "100%",
+              width: '70%',
+              height: '100%',
               backgroundColor: COLORS.lightGray3,
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: 'center',
+              justifyContent: 'center',
               borderRadius: SIZES.radius,
-            }}
-          >
-            <Text style={{ ...FONTS.h5 }}>{header.title_name}</Text>
+            }}>
+            <Text style={{...FONTS.h5}}>{header.location}</Text>
           </View>
         </View>
 
@@ -200,9 +198,8 @@ const Home = ({ navigation }) => {
           style={{
             width: 50,
             paddingRight: SIZES.padding * 2,
-            justifyContent: "center",
-          }}
-        >
+            justifyContent: 'center',
+          }}>
           <Image
             source={icons.basket}
             resizeMode="contain"
@@ -217,7 +214,7 @@ const Home = ({ navigation }) => {
   }
 
   function renderMainCategories() {
-    const renderItem = ({ item }) => {
+    const renderItem = ({item}) => {
       return (
         <TouchableOpacity
           style={{
@@ -226,26 +223,24 @@ const Home = ({ navigation }) => {
             backgroundColor:
               selectedCategory?.id == item.id ? COLORS.primary : COLORS.white,
             borderRadius: SIZES.radius,
-            alignItems: "center",
-            justifyContent: "center",
+            alignItems: 'center',
+            justifyContent: 'center',
             marginRight: SIZES.padding,
             ...styles.shadow,
           }}
-          onPress={() => onSelectCategory(item)}
-        >
+          onPress={() => onSelectCategory(item)}>
           <View
             style={{
               width: 50,
               height: 50,
               borderRadius: 25,
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: 'center',
+              justifyContent: 'center',
               backgroundColor:
                 selectedCategory?.id == item.id
                   ? COLORS.white
                   : COLORS.lightGray,
-            }}
-          >
+            }}>
             <Image
               source={item.icon}
               resizeMode="contain"
@@ -262,8 +257,7 @@ const Home = ({ navigation }) => {
               color:
                 selectedCategory?.id == item.id ? COLORS.white : COLORS.black,
               ...FONTS.body5,
-            }}
-          >
+            }}>
             {item.name}
           </Text>
         </TouchableOpacity>
@@ -271,47 +265,45 @@ const Home = ({ navigation }) => {
     };
 
     return (
-      <View style={{ padding: SIZES.padding * 2 }}>
-        <Text style={{ ...FONTS.h1, textAlign: "center", color: "#2BC48A" }}>
+      <View style={{padding: SIZES.padding * 2}}>
+        <Text style={{...FONTS.h1, textAlign: 'center', color: '#2BC48A'}}>
           Earth Planet
         </Text>
-        <Text style={{ ...FONTS.h3 }}>Main</Text>
-        <Text style={{ ...FONTS.h3 }}>Categories</Text>
+        <Text style={{...FONTS.h3}}>Main</Text>
+        <Text style={{...FONTS.h3}}>Categories</Text>
 
         <FlatList
           data={categories}
           horizontal
           showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => `${item.id}`}
+          keyExtractor={item => `${item.id}`}
           renderItem={renderItem}
-          contentContainerStyle={{ paddingVertical: SIZES.padding * 2 }}
+          contentContainerStyle={{paddingVertical: SIZES.padding * 2}}
         />
       </View>
     );
   }
 
   function renderPlantList() {
-    const renderItem = ({ item }) => (
+    const renderItem = ({item}) => (
       <TouchableOpacity
-        style={{ marginBottom: SIZES.padding * 2 }}
+        style={{marginBottom: SIZES.padding * 2}}
         onPress={() =>
-          navigation.navigate("Plant", {
+          navigation.navigate('Plant', {
             item,
             header,
           })
-        }
-      >
+        }>
         {/* Image */}
         <View
           style={{
             marginBottom: SIZES.padding,
-          }}
-        >
+          }}>
           <Image
             source={item.photo}
             resizeMode="cover"
             style={{
-              width: "100%",
+              width: '100%',
               height: 200,
               borderRadius: SIZES.radius,
             }}
@@ -319,31 +311,29 @@ const Home = ({ navigation }) => {
 
           <View
             style={{
-              position: "absolute",
+              position: 'absolute',
               bottom: 0,
               height: 50,
               width: SIZES.width * 0.3,
               backgroundColor: COLORS.white,
               borderTopRightRadius: SIZES.radius,
               borderBottomLeftRadius: SIZES.radius,
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: 'center',
+              justifyContent: 'center',
               ...styles.shadow,
-            }}
-          >
-            <Text style={{ ...FONTS.h4 }}>{item.duration}</Text>
+            }}>
+            <Text style={{...FONTS.h4}}>{item.duration}</Text>
           </View>
         </View>
 
         {/* Plant Info */}
-        <Text style={{ ...FONTS.body2 }}>{item.name}</Text>
+        <Text style={{...FONTS.body2}}>{item.name}</Text>
 
         <View
           style={{
             marginTop: SIZES.padding,
-            flexDirection: "row",
-          }}
-        >
+            flexDirection: 'row',
+          }}>
           {/* Rating */}
           <Image
             source={icons.star}
@@ -354,31 +344,27 @@ const Home = ({ navigation }) => {
               marginRight: 10,
             }}
           />
-          <Text style={{ ...FONTS.body3 }}>{item.rating}</Text>
+          <Text style={{...FONTS.body3}}>{item.rating}</Text>
 
           {/* Categories */}
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: 10,
-            }}
-          >
-            {item.categories.map((categoryId) => {
+            }}>
+            {item.categories.map(categoryId => {
               return (
-                <View style={{ flexDirection: "row" }} key={categoryId}>
-                  <Text style={{ ...FONTS.body3 }}>
+                <View style={{flexDirection: 'row'}} key={categoryId}>
+                  <Text style={{...FONTS.body3}}>
                     {getCategoryNameById(categoryId)}
                   </Text>
-                  <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}>
-                    {" "}
-                    .{" "}
-                  </Text>
+                  <Text style={{...FONTS.h3, color: COLORS.darkgray}}> . </Text>
                 </View>
               );
             })}
 
             {/* Price */}
-            {[1, 2, 3].map((priceRating) => (
+            {[1, 2, 3].map(priceRating => (
               <Text
                 key={priceRating}
                 style={{
@@ -387,8 +373,7 @@ const Home = ({ navigation }) => {
                     priceRating <= item.priceRating
                       ? COLORS.black
                       : COLORS.darkgray,
-                }}
-              >
+                }}>
                 $
               </Text>
             ))}
@@ -400,7 +385,7 @@ const Home = ({ navigation }) => {
     return (
       <FlatList
         data={plants}
-        keyExtractor={(item) => `${item.id}`}
+        keyExtractor={item => `${item.id}`}
         renderItem={renderItem}
         contentContainerStyle={{
           paddingHorizontal: SIZES.padding * 2,
@@ -425,7 +410,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.lightGray4,
   },
   shadow: {
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
