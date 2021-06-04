@@ -27,8 +27,8 @@
 
 <!-- imgages -->
 
-![Properties SS](https://res.cloudinary.com/dxvzhnyuo/image/upload/v1622784640/ss1_wtn53v.png)
-![Properties SS2](https://res.cloudinary.com/dxvzhnyuo/image/upload/v1622784641/ss2_p6vmuh.png)
+![Properties SS](https://res.cloudinary.com/dxvzhnyuo/image/upload/v1622816760/Screenshot_20210604-202252_y6ohbe.png)
+![Properties SS2](https://res.cloudinary.com/dxvzhnyuo/image/upload/v1622816759/Screenshot_20210604-202311_hhzqsy.png)
 
 ## Getting Started App
 
