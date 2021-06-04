@@ -1,1 +1,1 @@
-Plant Shop
+Plant Shop App
